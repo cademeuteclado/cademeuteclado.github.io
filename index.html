@@ -1,175 +1,78 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Exemplo de Imagem Aleatória de Campeão do League of Legends</title>
+    <title>Exemplo</title>
+    <style>
+      body {
+        background-color: cyan;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #texto {
+        color: cyan;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+      }
+      #caixa-de-texto {
+        width: 200px;
+        margin-top: 50px;
+        text-align: center;
+        font-size: 20px;
+      }
+      #botao {
+        background-color: white;
+        border: none;
+        padding: 10px;
+        margin-top: 10px;
+      }
+      #seta {
+        font-size: 20px;
+        margin-left: 5px;
+      }
+      #lol {
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 100px;
+        font-weight: bold;
+      }
+    </style>
   </head>
   <body>
-    <h1>Weslley sabe das coisa pae</h1>
-    <button onclick="mostrarImagem()">Mostrar Imagem</button>
-    <div id="imagem"></div>
+    <p id="texto">VASCO</p>
+    <input type="text" id="caixa-de-texto">
+    <button id="botao"><span id="seta">&#10132;</span></button>
+    <div id="lol">reginaldo</div>
+    
     <script>
-      function mostrarImagem() {
-        // Array com os nomes dos campeões
-        var campeoes = [
-          "Aatrox",
-          "Ahri",
-          "Akali",
-          "Alistar",
-          "Amumu",
-          "Anivia",
-          "Annie",
-          "Aphelios",
-          "Ashe",
-          "Aurelion Sol",
-          "Azir",
-          "Bard",
-          "Blitzcrank",
-          "Brand",
-          "Braum",
-          "Caitlyn",
-          "Camille",
-          "Cassiopeia",
-          "Cho'Gath",
-          "Corki",
-          "Darius",
-          "Diana",
-          "Dr. Mundo",
-          "Draven",
-          "Ekko",
-          "Elise",
-          "Evelynn",
-          "Ezreal",
-          "Fiddlesticks",
-          "Fiora",
-          "Fizz",
-          "Galio",
-          "Gangplank",
-          "Garen",
-          "Gnar",
-          "Gragas",
-          "Graves",
-          "Hecarim",
-          "Heimerdinger",
-          "Illaoi",
-          "Irelia",
-          "Ivern",
-          "Janna",
-          "Jarvan IV",
-          "Jax",
-          "Jayce",
-          "Jhin",
-          "Jinx",
-          "Kai'Sa",
-          "Kalista",
-          "Karma",
-          "Karthus",
-          "Kassadin",
-          "Katarina",
-          "Kayle",
-          "Kayn",
-          "Kennen",
-          "Kha'Zix",
-          "Kindred",
-          "Kled",
-          "Kog'Maw",
-          "LeBlanc",
-          "Lee Sin",
-          "Leona",
-          "Lillia",
-          "Lissandra",
-          "Lucian",
-          "Lulu",
-          "Lux",
-          "Malphite",
-          "Malzahar",
-          "Maokai",
-          "Master Yi",
-          "Miss Fortune",
-          "Mordekaiser",
-          "Morgana",
-          "Nami",
-          "Nasus",
-          "Nautilus",
-          "Neeko",
-          "Nidalee",
-          "Nocturne",
-          "Nunu & Willump",
-          "Olaf",
-          "Orianna",
-          "Ornn",
-          "Pantheon",
-          "Poppy",
-          "Pyke",
-          "Qiyana",
-          "Quinn",
-          "Rakan",
-          "Rammus",
-          "Rek'Sai",
-          "Rell",
-          "Renekton",
-          "Rengar",
-          "Riven",
-          "Rumble",
-          "Ryze",
-          "Samira",
-          "Sejuani",
-          "Senna",
-          "Seraphine",
-          "Sett",
-          "Shaco",
-          "Shen",
-          "Shyvana",
-          "Swain",
-"Sylas",
-"Syndra",
-"Tahm Kench",
-"Taliyah",
-"Talon",
-"Taric",
-"Teemo",
-"Thresh",
-"Tristana",
-"Trundle",
-"Tryndamere",
-"Twisted Fate",
-"Twitch",
-"Udyr",
-"Urgot",
-"Varus",
-"Vayne",
-"Veigar",
-"Vel'Koz",
-"Vi",
-"Viktor",
-"Vladimir",
-"Volibear",
-"Warwick",
-"Wukong",
-"Xayah",
-"Xerath",
-"Xin Zhao",
-"Yasuo",
-"Yone",
-"Yorick",
-"Yuumi",
-"Zac",
-"Zed",
-"Ziggs",
-"Zilean",
-"Zoe",
-"Zyra"
-];  
-  // Seleciona um campeão aleatório do array
-    var campeaoAleatorio = campeoes[Math.floor(Math.random() * campeoes.length)];
-
-    // Cria um elemento de imagem com a URL do campeão aleatório
-    var imagemCampeao = document.createElement("img");
-    imagemCampeao.src = "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/" + campeaoAleatorio + "_0.jpg";
-
-    // Remove qualquer imagem anterior e adiciona a nova imagem na tela
-    var divImagem = document.getElementById("imagem");
-    divImagem.innerHTML = "";
-    divImagem.appendChild(imagemCampeao);
-  }
-</script>
-
+      const botao = document.querySelector('#botao');
+      const caixaDeTexto = document.querySelector('#caixa-de-texto');
+      const lol = document.querySelector('#lol');
+      
+      botao.addEventListener('click', function() {
+        if (caixaDeTexto.value === 'VASCO') {
+          document.body.style.animation = 'piscar 1s infinite';
+          lol.style.display = 'block';
+        }
+      });
+    </script>
+    
+    <style>
+      @keyframes piscar {
+        0% {
+          background-color: cyan;
+        }
+        50% {
+          background-color: magenta;
+        }
+        100% {
+          background-color: yellow;
+        }
+      }
+    </style>
+  </body>
+</html>
