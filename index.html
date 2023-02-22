@@ -1,78 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Exemplo</title>
-    <style>
-      body {
-        background-color: cyan;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      #texto {
-        color: cyan;
-        position: absolute;
-        top: 10px;
-        right: 10px;
-      }
-      #caixa-de-texto {
-        width: 200px;
-        margin-top: 50px;
-        text-align: center;
-        font-size: 20px;
-      }
-      #botao {
-        background-color: white;
-        border: none;
-        padding: 10px;
-        margin-top: 10px;
-      }
-      #seta {
-        font-size: 20px;
-        margin-left: 5px;
-      }
-      #lol {
-        display: none;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 100px;
-        font-weight: bold;
-      }
-    </style>
+    <title>Verificar palavra</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-    <p id="texto">VASCO</p>
-    <input type="text" id="caixa-de-texto">
-    <button id="botao"><span id="seta">&#10132;</span></button>
-    <div id="lol">reginaldo</div>
-    
-    <script>
-      const botao = document.querySelector('#botao');
-      const caixaDeTexto = document.querySelector('#caixa-de-texto');
-      const lol = document.querySelector('#lol');
-      
-      botao.addEventListener('click', function() {
-        if (caixaDeTexto.value === 'VASCO') {
-          document.body.style.animation = 'piscar 1s infinite';
-          lol.style.display = 'block';
-        }
-      });
-    </script>
-    
-    <style>
-      @keyframes piscar {
-        0% {
-          background-color: cyan;
-        }
-        50% {
-          background-color: magenta;
-        }
-        100% {
-          background-color: yellow;
-        }
-      }
-    </style>
+    <div class="container">
+      <input type="text" id="palavra" placeholder="Digite VASCO" />
+      <button onclick="verificar()">Verificar</button>
+    </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
